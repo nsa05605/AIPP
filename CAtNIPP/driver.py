@@ -105,7 +105,8 @@ def main():
     dp_model = nn.DataParallel(global_network)
 
     # jobList, metric_name 초기화.
-    # jobList는 가중치, 현재 에피소드, 예산 범위, 샘플 크기, 샘플 길이를 저장.
+    # jobList는 jobResults, metrics, info를 저장.
+    # 각 의미는 runner.py 아래 부분의 job() 메서드 확인
     # sample_size는 한 에피소드에서 샘플링할 노드(포인트)의 개수를 의미함.
     # SMAPLE_LENGTH는 샘플 포인트 간의 이동 거리를 의미. 여기서는 0.2로 0.2m를 의미하는 것으로 보임
     # metric_name은 남은 예산, 경로 계획의 성공률, 에러(예측 정확도), 공분산 변화량, 상호 정보량, F1 스코어, 공분산을 저장함.
