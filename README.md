@@ -7,7 +7,12 @@
 - Attention과 LSTM 구조를 사용하여 그래프 기반 path planning 구조 사용
 ### 코드 리뷰 진행 상황
 - 코드 각 부분에 대한 주석 작성 완료
-- 코드 흐름 정리 예정
+- 코드 흐름 정리    
+  - driver.py main() 함수에서 AttentionNet, RLRunner 클래스 호출
+  - runner.py \__init__함수에서 AttentionNet 초기화 및 singleThrededJob() 함수에서 Worker 클래스 호출
+  - worker.py \__init__함수에서 Env 클래스 초기화  
+  - env.py reset() 함수에서 GaussianProcessForIPP 클래스 초기화 및 step() 함수에서 GP 업데이트  
+    -> 이 과정에서 cov_trace 사용하여 reward 계산  
 ## 2. Deep Reinforcement Learning with Dynamic Graphs for Adaptive Informative Path Planning
 ### 논문 소개
 - CAtNIPP 코드 기반으로 작성된 3차원 AIPP 연구
