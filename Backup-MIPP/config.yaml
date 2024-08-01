@@ -1,0 +1,197 @@
+#*************Area Information*******************#
+random_seed: 0
+
+reuse_network: True
+full_observable: True
+
+train_with_evaluation_settings: True
+random_evaluation: True
+
+reward_type: 0
+state_type: 0
+
+n_epoch: 1000
+n_episodes: 2
+
+#For off policy
+n_train_steps: 5
+
+
+softmax_noise: True
+
+nstep_return: 1
+
+evaluate_cycle: 50
+save_cycle: 100
+target_update_cycle: 50
+
+output_dir: "./output"
+
+cuda: False
+unseen_priority: True
+
+
+rnn_hidden_dim: 64
+lr: 0.0001
+lr_actor: 0.0004
+lr_critic: 0.0004
+gamma: 0.99
+grad_norm_clip: 10
+batch_size: 32
+buffer_size: 10000
+
+
+mlp_hidden_dim: 64
+
+
+epsilon: 0.5
+min_epsilon: 0.05
+anneal_epsilon: 0.00064
+td_lambda: 0.8
+
+
+#mix net
+mixer: "vdn"
+hyper_hidden_dim: 64
+qmix_hidden_dim: 32
+
+#qtran
+qtran_hidden_dim: 64
+lambda_opt: 1
+lambda_nopt: 1
+
+#coma
+critic_hidden_dim: 64
+
+
+#can
+can_hidden_dim: 64
+can_lambda: 2
+
+#LIGM
+ligm_temp: 100
+ligm_lambda: 1 #IGM loss weight
+ligm_beta: 1 #Joint Q weight
+
+ligm_validate_with_jal: True
+
+ligm_agg_method: 0 # indvidual Q max aggregate method, 0: max of max , 1: mean of max
+
+ligm_opt_method: 0 # optimistic learning method, 0: negative td error weighted, 1: negative td loss threshhold
+ligm_opt_decaystep: 10000 #the number of steps to decay
+ligm_opt_fix_weight: 0.3 #the weight after decay get fixed
+ligm_opt_init_thresh: 10 #the initial threshold
+ligm_opt_fix_thresh: 0.1 #fixed threshold after decay
+
+
+
+area_one:
+
+    prob_file: 'prob/hlibv3.ipp'
+    pilot_file: 'data/libv3pilot.pickle'
+    gp_hypers: [168.40,23.86,1.08]
+    grid_step: 2.5
+    sample_interval: 0.5
+    
+    GA:
+        pop_size: 100
+        tnsize: 10
+        mcratio: 0.9
+        offratio: 0.7
+        init_huristics: True
+
+
+area_two:
+
+    prob_file: 'prob/itb2.ipp'
+    pilot_file: 'data/itb2pilot.pickle'
+    gp_hypers: [103.22,32.17,3.3]
+    grid_step: 2.
+    sample_interval: 1.0
+
+    GA:
+        pop_size: 100
+        tnsize: 10
+        mcratio: 0.9
+        offratio: 0.7
+        init_huristics: False    
+
+
+area_three:
+
+    prob_file: 'prob/inst3.ipp'
+    pilot_file: 'data/inst3_pilot2.pickle'
+    gp_hypers: [103.22,32.17,3.3]
+    grid_step: 2.
+    sample_interval: 1.
+
+    GA:
+        pop_size: 100
+        tnsize: 10
+        mcratio: 0.9
+        offratio: 0.7
+        init_huristics: False
+
+area_four:
+
+    prob_file: 'prob/inst4.ipp'
+    pilot_file: 'data/inst4_pilot.pickle'
+    gp_hypers: [103.22,32.17,3.3]
+    grid_step: 2.
+    sample_interval: 1.    
+    
+area_five:
+
+    prob_file: 'prob/inst5.ipp'
+    pilot_file: 'data/inst5_pilot.pickle'
+    gp_hypers: [103.22,32.17,3.3]
+    grid_step: 2.
+    sample_interval: 1.   
+    
+    GA:
+        pop_size: 100
+        tnsize: 10
+        mcratio: 0.9
+        offratio: 0.7
+        init_huristics: False    
+
+area_toy:
+
+    prob_file: 'prob/inst_toy.ipp'
+    pilot_file: 'data/inst_toy_pilot.pickle'
+    gp_hypers: [168.40,23.86,1.08]
+    grid_step: 2.
+    sample_interval: 1.   
+    
+area_toy0:
+
+    prob_file: 'prob/inst_toy0.ipp'
+    pilot_file: 'data/inst_toy0_pilot.pickle'
+    gp_hypers: [168.40,23.86,1.08]
+    grid_step: 2.
+    sample_interval: 1.  
+    
+area_toy1:
+
+    prob_file: 'prob/inst_toy1.ipp'
+    pilot_file: 'data/inst_toy1_pilot.pickle'
+    gp_hypers: [168.40,23.86,1.08]
+    grid_step: 2.
+    sample_interval: 1.  
+        
+        
+area_toy2:
+
+    prob_file: 'prob/inst_toy2.ipp'
+    pilot_file: 'data/inst_toy2_pilot.pickle'
+    gp_hypers: [168.40,23.86,1.08]
+    grid_step: 2.
+    sample_interval: 1.  
+    
+area_2steptoy:
+
+    prob_file: 'prob/inst_2steptoy.ipp'
+    pilot_file: 'data/inst_2steptoy_pilot.pickle'
+    gp_hypers: [168.40,23.86,1.08]
+    grid_step: 2.
+    sample_interval: 1.  
